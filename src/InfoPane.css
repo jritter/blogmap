@@ -1,0 +1,37 @@
+#InfoPane {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30vw;
+  z-index: 314159;
+  pointer-events: initial;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.post-image img {
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  display: block;
+  transition: all .3s ease-in-out;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.modal-body a {
+  color:#BC4747;
+}
+
+.modal-footer {
+  justify-content: start;
+}
+
+.modal-footer a {
+  color: #fff;
+  background-color:#BC4747;
+  border-color: #BC4747;
+}
+

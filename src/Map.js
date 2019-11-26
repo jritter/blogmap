@@ -2,14 +2,12 @@ import React from 'react';
 import L from 'leaflet';
 import $ from 'jquery';
 
+import InfoPane from './InfoPane';
+
 import './Map.css';
-import logo from './logo.svg';
 import 'leaflet/dist/leaflet.css';
 
-import Flag from "react-flags";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 
 import { renderToString } from 'react-dom/server'
@@ -34,20 +32,17 @@ class Map extends React.Component {
         return L.marker(latLng,{icon: myIcon})
       }}).addTo(map);
     });
+
+    $.getJSON('/itinerario_desconocido_posts.json', function(data){
+      console.log(data[0].country_code);
+    });
   }
 
   render () {
     return (
-          <div><Flag
-          name="CN"
-          format="png"
-          pngSize="64"
-          alt="Canada Flag"
-          basePath=""
-        />
-          <img src={logo} className="App-logo" alt="logo" />
-          <div id="map">
-          </div>
+          <div>
+            <div id="map"></div>
+            <InfoPane />
           </div>
     );
   }
