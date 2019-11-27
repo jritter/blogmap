@@ -131,8 +131,8 @@
     "guid": {
       "rendered": "https://itinerariodesconocido.ch/?p=2682"
     },
-    "modified": "2019-11-26T22:58:53",
-    "modified_gmt": "2019-11-26T21:58:53",
+    "modified": "2019-11-27T21:14:54",
+    "modified_gmt": "2019-11-27T20:14:54",
     "slug": "cdmx-und-teotihuacan",
     "status": "publish",
     "type": "post",
@@ -149,7 +149,7 @@
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 2642,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -169,7 +169,7 @@
       83,
       25
     ],
-    "jetpack_featured_media_url": "",
+    "jetpack_featured_media_url": "https://itinerariodesconocido.ch/wp-content/uploads/2019/10/DSC04516.jpg",
     "jetpack_publicize_connections": [],
     "country_code": "MX",
     "location": "19.432640 -99.133172",
@@ -214,6 +214,12 @@
         {
           "id": 2684,
           "href": "https://itinerariodesconocido.ch/wp-json/wp/v2/posts/2682/revisions/2684"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://itinerariodesconocido.ch/wp-json/wp/v2/media/2642"
         }
       ],
       "wp:attachment": [
