@@ -21,13 +21,12 @@
   color: #09d3ac;
 }
 
-
 #map {
   width: 100vw;
   height: 100vh;
 }
 
-.map-marker{
-  font-size: 24px; 
-  color:#BC4747;
+.map-marker {
+  font-size: 24px;
+  color: #bc4747;
 }

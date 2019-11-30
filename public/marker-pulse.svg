@@ -1,0 +1,38 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" > 
+ 	<g id="marker">
+		<circle class="core" cx="10" cy="10" r="3"/>
+		<circle class="ring" fill="none" stroke-miterlimit="10" cx="10" cy="10" r="5"/>
+	</g>
+    <style>
+        @-webkit-keyframes anim-pulse {
+            0%   { 
+                opacity: 1;
+                -webkit-transform : scale(.5);
+                }
+            10% {
+                opacity: 0.5;
+            }
+
+                90% {
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform : scale(1.25)
+            }
+        }
+        
+        .core {
+            fill: #bc4747;
+            opacity: 0.5;
+        }
+
+        .ring {
+            opacity: 0;
+            stroke: #bc4747;
+            transform-origin: center;
+            -webkit-animation: anim-pulse 2s 1s infinite;
+        }
+
+    </style>
+ </svg>
