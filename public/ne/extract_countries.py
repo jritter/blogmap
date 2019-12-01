@@ -4,15 +4,11 @@
 # unzip ne_50m_admin_0_countries.zip
 # ogr2ogr -f GeoJSON ne_50m_admin_0_countries.geojson ne_50m_admin_0_countries.shp
 
-
 import json
-import sys
 
 with open('public/ne/ne_50m_admin_0_countries.geojson', 'r') as f:
     countries = json.load(f)
 
 for c in countries['features']:
-
-    countrycode = c['properties']['ISO_A2']
-    with open('public/ne/countries/{0}.json'.format(countrycode), 'w+') as f:
+    with open('public/ne/countries/{0}.json'.format(c['properties']['ISO_A2']), 'w+') as f:
         f.write(json.dumps(c))
