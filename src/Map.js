@@ -1,5 +1,6 @@
 import React from "react";
 import L from "leaflet";
+import "leaflet-active-area";
 import $ from "jquery";
 
 import InfoPane from "./InfoPane";
@@ -28,6 +29,7 @@ class Map extends React.Component {
 
   componentDidMount() {
     var map = L.map("map").setView([51.505, -0.09], 5);
+    map.setActiveArea('activeArea');
     L.tileLayer(
       "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}",
       {
@@ -90,17 +92,20 @@ class Map extends React.Component {
         countrylayer.addTo(blogmap.state.map);
         
         blogmap.setState({ countrylayer: countrylayer });
+        blogmap.state.map.flyToBounds(countrylayer.getBounds());
+
+        try {
+          const position = L.latLng(coords.split(" ").map(x => parseFloat(x)));
+          blogmap.state.pulsemarker.setLatLng(position);
+        } catch (error) {
+          console.log("error reading coordinates: " + error);
+        }
         
       })
-      try {
-        const position = L.latLng(coords.split(" ").map(x => parseFloat(x)));
-        this.state.pulsemarker.setLatLng(position);
-        this.state.map.flyTo(position);
-      } catch (error) {
-        console.log("error reading coordinates: " + error);
-      }
+      
     }
-    this.setState({ current: i });
+    
+    this.setState({ current: i});
   }
 
   render() {
@@ -120,6 +125,7 @@ class Map extends React.Component {
       <div>
         <div id="map"></div>
         {pane}
+        <div className="activeArea"></div>
       </div>
     );
   }

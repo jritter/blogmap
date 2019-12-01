@@ -30,3 +30,12 @@
   font-size: 24px;
   color: #bc4747;
 }
+
+.activeArea {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 70vw;
+  pointer-events: none;
+}
