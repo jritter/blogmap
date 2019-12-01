@@ -17,6 +17,29 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     var blogmap = this;
+
+    $(document).keydown(function(e) {
+      switch(e.which) {
+          case 37: // left
+          blogmap.prev();
+          break;
+
+          case 38: // up
+          break;
+
+          case 39: // right
+          blogmap.next();
+          break;
+
+          case 40: // down
+          break;
+
+          default: return; // exit this handler for other keys
+      }
+      e.preventDefault(); // prevent the default action (scroll / move caret)
+    });
+
+
     this.state = { posts: null, current: 1 };
     $.when(
       $.getJSON("/itinerario_desconocido_posts.json", function(data) {
@@ -25,6 +48,9 @@ class Map extends React.Component {
     ).then(function() {
       blogmap.moveToPost(1);
     });
+
+
+    
   }
 
   componentDidMount() {
