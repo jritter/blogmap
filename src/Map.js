@@ -46,7 +46,7 @@ class Map extends React.Component {
         blogmap.setState({ posts: data });
       })
     ).then(function() {
-      blogmap.moveToPost(1);
+      blogmap.moveToPost(blogmap.state.posts.length - 1);
     });
 
 
