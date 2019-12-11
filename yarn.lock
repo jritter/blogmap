@@ -1668,6 +1668,10 @@ aproba@^1.0.3, aproba@^1.1.1:
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
 
+"arc@git+https://github.com/springmeyer/arc.js.git#b005df058b010d1c7aaf3aa451516d41294dac0e":
+  version "0.1.0"
+  resolved "git+https://github.com/springmeyer/arc.js.git#b005df058b010d1c7aaf3aa451516d41294dac0e"
+
 are-we-there-yet@~1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-1.1.5.tgz#4b35c2944f062a8bfcda66410760350fe9ddfc21"
@@ -5869,6 +5873,13 @@ leaflet-active-area@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/leaflet-active-area/-/leaflet-active-area-1.1.1.tgz#ea25cfa7a2ca429ecf73930b6a8413068789e03d"
   integrity sha512-PNaMnD9wZ28/V1ZQjS+ebINKD4vqxslrnJkslllmIK+HYPVbFYpH9vqUWFbweJ6aRL2d4OFP4BJcxsoFcQmiTg==
+
+leaflet-arc@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/leaflet-arc/-/leaflet-arc-1.0.2.tgz#b1e2bdb7bc4c382071fd5bffba299793d263f527"
+  integrity sha1-seK9t7xMOCBx/Vv/uimXk9Jj9Sc=
+  dependencies:
+    arc "git+https://github.com/springmeyer/arc.js.git#b005df058b010d1c7aaf3aa451516d41294dac0e"
 
 leaflet@^1.6.0:
   version "1.6.0"

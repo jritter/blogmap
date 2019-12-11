@@ -28,13 +28,10 @@ function InfoPane(props) {
             dangerouslySetInnerHTML={{ __html: props.post.title.rendered }}
           ></p>
         </h5>
-        <span>{flag}</span>
+        <span className="flag">{flag}</span>
       </div>
       <div className="post-image">
-        <img
-          src={props.post.jetpack_featured_media_url}
-          alt={props.post.title.rendered}
-        />
+        <img src={props.image.src} alt={props.image.alt} />
       </div>
       <div className="modal-body">
         <p

@@ -6,7 +6,7 @@
 
 import json
 
-with open('public/ne/ne_50m_admin_0_countries.geojson', 'r') as f:
+with open('public/ne/ne_10m_admin_0_countries.geojson', 'r') as f:
     countries = json.load(f)
 
 for c in countries['features']:

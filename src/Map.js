@@ -1,12 +1,13 @@
-import React from "react";
-import L from "leaflet";
-import "leaflet-active-area";
-import $ from "jquery";
+import React from 'react';
+import L from 'leaflet';
+import 'leaflet-active-area';
+import 'leaflet-arc';
+import $ from 'jquery';
 
-import InfoPane from "./InfoPane";
+import InfoPane from './InfoPane';
 
-import "./Map.css";
-import "leaflet/dist/leaflet.css";
+import './Map.css';
+import 'leaflet/dist/leaflet.css';
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import { faCircle } from '@fortawesome/free-regular-svg-icons';
@@ -16,34 +17,18 @@ import "leaflet/dist/leaflet.css";
 class Map extends React.Component {
   constructor(props) {
     super(props);
-    var blogmap = this;
-
-    $(document).keydown(function(e) {
-      switch (e.which) {
-        case 37: // left
-          blogmap.prev();
-          break;
-
-        case 38: // up
-          break;
-
-        case 39: // right
-          blogmap.next();
-          break;
-
-        case 40: // down
-          break;
-
-        default:
-          return; // exit this handler for other keys
-      }
-      e.preventDefault(); // prevent the default action (scroll / move caret)
-    });
+    const blogmap = this;
 
     this.state = { posts: null, current: 1 };
     $.when(
-      $.getJSON("/itinerario_desconocido_posts.json", function(data) {
-        blogmap.setState({ posts: data });
+      $.getJSON('/itinerario_desconocido_posts.json', function(data) {
+        var images = [];
+        for (var i = 0; i < data.length; i++) {
+          images[i] = new Image();
+          images[i].src = data[i].jetpack_featured_media_url;
+          images[i].alt = data[i].title.rendered;
+        }
+        blogmap.setState({ posts: data, images: images });
       })
     ).then(function() {
       blogmap.moveToPost(blogmap.state.posts.length - 1);
@@ -51,22 +36,39 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
-    var map = L.map("map").setView([51.505, -0.09], 5);
-    map.setActiveArea("activeArea");
+    const blogmap = this;
+
+    var map = L.map('map', {
+      zoomControl: false,
+      keyboard: true
+    }).setView([51.505, -0.09], 5);
+    map.setActiveArea('activeArea');
+
+    L.control
+      .zoom({
+        position: 'bottomleft'
+      })
+      .addTo(map);
+
     L.tileLayer(
-      "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}",
+      'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}',
       {
         attribution:
           'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains: "abcd",
+        subdomains: 'abcd',
         minZoom: 0,
         maxZoom: 20,
-        ext: "png"
+        ext: 'png'
       }
     ).addTo(map);
 
+    /*L.Polyline.Arc([43.11667, 131.9], [55.75222, 37.61556], {
+      color: 'red',
+      vertices: 200
+    }).addTo(map);*/
+
     const pulsemarkersvg = L.icon({
-      iconUrl: "/marker-pulse.svg",
+      iconUrl: '/marker-pulse.svg',
       iconSize: [80, 80]
     });
 
@@ -74,6 +76,44 @@ class Map extends React.Component {
     pulsemarker.addTo(map);
 
     this.setState({ map: map, pulsemarker: pulsemarker });
+
+    $(document).keydown(function(e) {
+      switch (e.which) {
+        case 37: // left
+          //blogmap.prev();
+          break;
+
+        case 38: // up
+          break;
+
+        case 39: // right
+          //blogmap.next();
+          break;
+
+        case 40: // down
+          break;
+
+        case 107: // numpad +
+          //map.zoomIn();
+          break;
+
+        case 109: // numpad -
+          //map.zoomOut();
+          break;
+
+        case 33: // page up
+          blogmap.next();
+          break;
+
+        case 34: // page down
+          blogmap.prev();
+          break;
+
+        default:
+          return; // exit this handler for other keys
+      }
+      e.preventDefault(); // prevent the default action (scroll / move caret)
+    });
 
     //var myIcon = L.divIcon({className: 'map-marker', html: renderToString(<FontAwesomeIcon icon={faCircle} />)});
   }
@@ -94,9 +134,9 @@ class Map extends React.Component {
     const coords = this.state.posts[i].location;
     var blogmap = this;
 
-    if (coords !== "") {
+    if (coords !== '') {
       $.getJSON(
-        "/ne/countries/" + this.state.posts[i].country_code + ".json",
+        '/ne/countries/' + this.state.posts[i].country_code + '.json',
         function(data) {
           if (blogmap.state.countrylayer != null) {
             blogmap.state.map.removeLayer(blogmap.state.countrylayer);
@@ -105,7 +145,7 @@ class Map extends React.Component {
           const countrylayer = L.geoJSON(data, {
             style: function(feature) {
               return {
-                color: "#bc4747",
+                color: '#bc4747',
                 fillOpacity: 0.2,
                 opacity: 0.5,
                 weight: 5
@@ -120,11 +160,11 @@ class Map extends React.Component {
 
           try {
             const position = L.latLng(
-              coords.split(" ").map(x => parseFloat(x))
+              coords.split(' ').map(x => parseFloat(x))
             );
             blogmap.state.pulsemarker.setLatLng(position);
           } catch (error) {
-            console.log("error reading coordinates: " + error);
+            console.log('error reading coordinates: ' + error);
           }
         }
       );
@@ -140,6 +180,7 @@ class Map extends React.Component {
       pane = (
         <InfoPane
           post={this.state.posts[this.state.current]}
+          image={this.state.images[this.state.current]}
           prev={() => this.prev()}
           next={() => this.next()}
         />
