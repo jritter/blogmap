@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/jritter/blogmap/status "Docker Repository on Quay")](https://quay.io/repository/jritter/blogmap)
+
 # How to Build Docker image
 
 ```
