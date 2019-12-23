@@ -44,11 +44,11 @@ class Map extends React.Component {
     }).setView([51.505, -0.09], 5);
     map.setActiveArea('activeArea');
 
-    L.control
-      .zoom({
-        position: 'bottomleft'
-      })
-      .addTo(map);
+    // L.control
+    //   .zoom({
+    //     position: 'bottomleft'
+    //   })
+    //   .addTo(map);
 
     L.tileLayer(
       'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}',

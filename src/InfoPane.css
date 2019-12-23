@@ -21,26 +21,8 @@
   transition-delay: 0s;
 }
 
-.modal-body {
-  height: 300px;
-}
-
-.modal-body a {
-  color: #bc4747;
-}
-
-.modal-footer {
-  justify-content: start;
-}
-
-.modal-footer a {
-  color: #fff;
-  background-color: #bc4747;
-  border-color: #bc4747;
-}
-
 .flag {
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 46px;
   width: 46px;
   line-height: 40px;
@@ -50,5 +32,88 @@
   background-color: rgb(138, 138, 138, 0.5);
   color: white;
   text-align: center;
-  font-size: 100%;
+  font-size: 100%;*/
+  border: 1px solid #eee;
+  width: 32px;
+  height: 32px;
+}
+
+.post-header {
+  border-bottom: 1px solid #eee;
+  padding: 8% 10%;
+  position: relative;
+}
+
+.post-header .post-title {
+  color: #2b3542;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 120%;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.post .post-header:before,
+.page .post-header:before {
+  border: 12px solid transparent;
+  border-top-color: #eee;
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 10%;
+  margin-bottom: -24px;
+  position: absolute;
+  z-index: 10;
+}
+
+.post .post-header:after,
+.page .post-header:after {
+  border: 11px solid transparent;
+  border-top-color: #fff;
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 10%;
+  margin-bottom: -21px;
+  margin-left: 1px;
+  position: absolute;
+  z-index: 11;
+}
+
+.post-header .post-title em {
+  font-weight: 700;
+}
+
+.post-footer {
+  border-top: 1px solid #eee;
+  padding: 3% 4%;
+  position: relative;
+}
+
+.blogmap-button {
+  background-color: #bc4747;
+  border: none;
+  color: white;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.blogmap-arrow-button {
+  background-color: #444;
+  padding: 10px 16px;
+}
+
+.blogmap-button:hover,
+.blogmap-button:focus,
+.blogmap-button:active {
+  color: #ffffff;
 }

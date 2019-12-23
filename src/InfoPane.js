@@ -21,47 +21,43 @@ function InfoPane(props) {
   }
 
   return (
-    <div className="modal-content" id="InfoPane">
-      <div className="modal-header d-flex justify-content-between">
-        <h5 className="modal-title">
-          <p
-            dangerouslySetInnerHTML={{ __html: props.post.title.rendered }}
-          ></p>
-        </h5>
-        <span className="flag">{flag}</span>
+    <div className="post posts type-post status-publish clear" id="InfoPane">
+      <div className="post-header justify-content-between">
+        <h1
+          className="post-title entry-title"
+          dangerouslySetInnerHTML={{ __html: props.post.title.rendered }}
+        ></h1>
       </div>
-      <div className="post-image">
+      <div className="featured-media">
         <img src={props.image.src} alt={props.image.alt} />
       </div>
-      <div className="modal-body">
+      <div className="post-content clear">
         <p
           dangerouslySetInnerHTML={{ __html: props.post.excerpt.rendered }}
         ></p>
       </div>
-      <div className="modal-footer d-flex justify-content-between">
-        <a
-          className="btn btn-danger"
-          href={props.post.link}
-          role="button"
-          target="blank"
-        >
-          Zum Blog Post
-        </a>
-        <div className="btn-group" role="group" aria-label="...">
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={props.prev}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={props.next}
-          >
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
+      <div className="post-footer">
+        <div>
+          {flag}
+          <span style={{ float: 'right' }}>
+            <a className="blogmap-button" href={props.post.link} target="blank">
+              Zum Blog Post
+            </a>
+            <a
+              className="blogmap-button blogmap-arrow-button"
+              onClick={props.prev}
+              href="#"
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </a>
+            <a
+              className="blogmap-button blogmap-arrow-button"
+              onClick={props.next}
+              href="#"
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -69,9 +65,3 @@ function InfoPane(props) {
 }
 
 export default InfoPane;
-
-//
-//
-// {props.post.title.rendered}
-//
-//
