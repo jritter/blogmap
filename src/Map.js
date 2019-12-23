@@ -102,11 +102,11 @@ class Map extends React.Component {
           break;
 
         case 33: // page up
-          blogmap.next();
+          blogmap.prev();
           break;
 
         case 34: // page down
-          blogmap.prev();
+          blogmap.next();
           break;
 
         default:
