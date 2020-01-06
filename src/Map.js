@@ -50,15 +50,27 @@ class Map extends React.Component {
     //   })
     //   .addTo(map);
 
+    // L.tileLayer(
+    //   'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}',
+    //   {
+    //     attribution:
+    //       'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //     subdomains: 'abcd',
+    //     minZoom: 0,
+    //     maxZoom: 20,
+    //     ext: 'png'
+    //   }
+    // ).addTo(map);
+
     L.tileLayer(
-      'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}',
+      'https://api.maptiler.com/maps/darkmatter/{z}/{x}/{y}.png?key=cvyxgasj0QWBj4iOEV2Z',
       {
+        tileSize: 512,
+        zoomOffset: -1,
+        minZoom: 1,
         attribution:
-          'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains: 'abcd',
-        minZoom: 0,
-        maxZoom: 20,
-        ext: 'png'
+          '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+        crossOrigin: true
       }
     ).addTo(map);
 
