@@ -12,7 +12,10 @@ RUN yarn build
 #EXPOSE 80
 #CMD ["nginx", "-g", "daemon off;"]
 
-FROM registry.redhat.io/ubi8/ubi-minimal
+FROM registry.fedoraproject.org/fedora-minimal
+
+#RUN microdnf --nodocs -y install httpd \
+#  && microdnf clean all
 
 RUN microdnf -y install httpd \
   && microdnf clean all
