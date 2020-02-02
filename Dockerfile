@@ -22,6 +22,8 @@ RUN microdnf -y install httpd \
 
 COPY --from=build-deps /usr/src/app/build /var/www/html
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
+  && sed -i 's/logs\/access_log/\/dev\/stdout/' /etc/httpd/conf/httpd.conf \
+  && sed -i 's/logs\/error_log/\/dev\/stderr/' /etc/httpd/conf/httpd.conf \
   && chgrp -R 0 /var/log/httpd /var/run/httpd \
   && chmod -R g=u /var/log/httpd /var/run/httpd 
 
