@@ -6,27 +6,18 @@ RUN yarn
 COPY . ./
 RUN yarn build
 
-# Stage 2 - the production environment
-#FROM nginx:alpine
-#COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
-#EXPOSE 80
-#CMD ["nginx", "-g", "daemon off;"]
-
+# Stage 2 - build NGINX image
 FROM registry.fedoraproject.org/fedora-minimal
 
-#RUN microdnf --nodocs -y install httpd \
-#  && microdnf clean all
-
-RUN microdnf -y install httpd \
+RUN microdnf -y install nginx \
   && microdnf clean all
 
-COPY --from=build-deps /usr/src/app/build /var/www/html
-RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
-  && sed -i 's/logs\/access_log/\/dev\/stdout/' /etc/httpd/conf/httpd.conf \
-  && sed -i 's/logs\/error_log/\/dev\/stderr/' /etc/httpd/conf/httpd.conf \
-  && chgrp -R 0 /var/log/httpd /var/run/httpd \
-  && chmod -R g=u /var/log/httpd /var/run/httpd 
+# Forward request logs to Docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+  && ln -sf /dev/stderr /var/log/nginx/error.log
 
-EXPOSE 8080
-USER 1001
-CMD httpd -D FOREGROUND
+COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+
+EXPOSE 80
+STOPSIGNAL SIGTERM
+CMD ["nginx", "-g", "daemon off;"]
