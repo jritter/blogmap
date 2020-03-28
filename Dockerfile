@@ -20,6 +20,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
 
+USER 1001
 EXPOSE 8080
 STOPSIGNAL SIGTERM
 CMD ["nginx", "-g", "daemon off;"]
