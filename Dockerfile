@@ -14,10 +14,12 @@ RUN microdnf -y install nginx \
 
 # Forward request logs to Docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-  && ln -sf /dev/stderr /var/log/nginx/error.log
+  && ln -sf /dev/stderr /var/log/nginx/error.log \
+  && mv /etc/nginx/nginx.conf.default /etc/nginx/nginx.conf \
+  && sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/nginx.conf
 
 COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 STOPSIGNAL SIGTERM
 CMD ["nginx", "-g", "daemon off;"]
