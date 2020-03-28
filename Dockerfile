@@ -16,6 +16,7 @@ RUN microdnf -y install nginx \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log \
   && mv /etc/nginx/nginx.conf.default /etc/nginx/nginx.conf \
+  && chmod 777 /run \
   && sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/nginx.conf
 
 COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
