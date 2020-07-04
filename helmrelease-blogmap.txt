@@ -1,0 +1,168 @@
+NAME: blogmap
+LAST DEPLOYED: Sat Mar 28 23:02:32 2020
+NAMESPACE: blogmap
+STATUS: deployed
+REVISION: 1
+USER-SUPPLIED VALUES:
+null
+
+COMPUTED VALUES:
+affinity: {}
+fullnameOverride: ""
+image:
+  pullPolicy: IfNotPresent
+  repository: quay.io/jritter/blogmap
+imagePullSecrets: []
+ingress:
+  annotations: {}
+  enabled: true
+  hosts:
+  - host: blogmap.local
+    paths:
+    - /
+  tls: []
+nameOverride: ""
+nodeSelector: {}
+podSecurityContext: {}
+replicaCount: 3
+resources: {}
+securityContext: {}
+service:
+  port: 8080
+  type: ClusterIP
+serviceAccount:
+  create: true
+  name: null
+tolerations: []
+
+HOOKS:
+---
+# Source: blogmap/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "blogmap-test-connection"
+  labels:
+
+    helm.sh/chart: blogmap-0.1.0
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['blogmap:8080']
+  restartPolicy: Never
+MANIFEST:
+---
+# Source: blogmap/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: blogmap
+  labels:
+
+    helm.sh/chart: blogmap-0.1.0
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+---
+# Source: blogmap/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: blogmap
+  labels:
+    helm.sh/chart: blogmap-0.1.0
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+---
+# Source: blogmap/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogmap
+  labels:
+    helm.sh/chart: blogmap-0.1.0
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: blogmap
+      app.kubernetes.io/instance: blogmap
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: blogmap
+        app.kubernetes.io/instance: blogmap
+    spec:
+      serviceAccountName: blogmap
+      securityContext:
+        {}
+      containers:
+        - name: blogmap
+          securityContext:
+            {}
+          image: "quay.io/jritter/blogmap:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {}
+---
+# Source: blogmap/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: blogmap
+  labels:
+    helm.sh/chart: blogmap-0.1.0
+    app.kubernetes.io/name: blogmap
+    app.kubernetes.io/instance: blogmap
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  rules:
+    - host: "blogmap.local"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: blogmap
+              servicePort: 8080
+
+NOTES:
+1. Get the application URL by running these commands:
+  http://blogmap.local/
