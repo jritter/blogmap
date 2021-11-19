@@ -13,7 +13,6 @@
     "jquery": "^3.4.1",
     "leaflet": "^1.6.0",
     "leaflet-active-area": "^1.1.1",
-    "leaflet-arc": "^1.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-flags": "^0.1.18",
@@ -21,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

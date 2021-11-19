@@ -1,7 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
 import 'leaflet-active-area';
-import 'leaflet-arc';
+//import 'leaflet-arc';
 import $ from 'jquery';
 
 import InfoPane from './InfoPane';
