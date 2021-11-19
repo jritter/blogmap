@@ -7,6 +7,7 @@ replicaCount: 2
 image:
   repository: quay.io/jritter/blogmap
   pullPolicy: IfNotPresent
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
