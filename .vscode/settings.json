@@ -1,10 +1,9 @@
 {
-  "cSpell.enabled": true,
+  "cSpell.enabled": false,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
     "**/build/**": true
-  },
-  "cSpell.language": "de-CH"
+  }
 }
