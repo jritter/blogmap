@@ -1,8 +1,10 @@
 # Stage 1 - the build process
 FROM quay.io/bitnami/node as build-deps
 WORKDIR /usr/src/app
-COPY package.json yarn.lock ./
-RUN yarn
+COPY package.json . 
+RUN yarn set version berry
+COPY yarn.lock .yarn .yarnrc.yml ./
+RUN yarn install
 COPY . ./
 RUN yarn build
 
