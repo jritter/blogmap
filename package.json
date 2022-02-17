@@ -43,5 +43,5 @@
     "@babel/helper-define-map": "^7.16.0",
     "@babel/helper-regex": "^7.10.5"
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.1"
 }
