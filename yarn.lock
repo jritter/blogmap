@@ -106,6 +106,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/helper-annotate-as-pure@npm:^7.22.5":
+  version: 7.22.5
+  resolution: "@babel/helper-annotate-as-pure@npm:7.22.5"
+  dependencies:
+    "@babel/types": "npm:^7.22.5"
+  checksum: 10/53da330f1835c46f26b7bf4da31f7a496dee9fd8696cca12366b94ba19d97421ce519a74a837f687749318f94d1a37f8d1abcbf35e8ed22c32d16373b2f6198d
+  languageName: node
+  linkType: hard
+
 "@babel/helper-builder-binary-assignment-operator-visitor@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/helper-builder-binary-assignment-operator-visitor@npm:7.16.7"
@@ -127,13 +136,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-builder-react-jsx@npm:^7.16.0":
-  version: 7.16.7
-  resolution: "@babel/helper-builder-react-jsx@npm:7.16.7"
+"@babel/helper-builder-react-jsx@npm:^7.22.10":
+  version: 7.22.10
+  resolution: "@babel/helper-builder-react-jsx@npm:7.22.10"
   dependencies:
-    "@babel/helper-annotate-as-pure": "npm:^7.16.7"
-    "@babel/types": "npm:^7.16.7"
-  checksum: 10/963d6b905b2200bd2531383575220117953cc3b889425299a322f87e3fc2acfb10e46196b4c7bad62006de16163fd8bf0afa8ffc4f92afab7f87922cc171d105
+    "@babel/helper-annotate-as-pure": "npm:^7.22.5"
+    "@babel/types": "npm:^7.22.10"
+  checksum: 10/e0ae3d518d240f88e016dd39f31d89033e7e197011762f3cc36c8b3e7f500fe4780e88d4f9bb129b3d0b36143bbc1154c7d353151e25ce6021f47fb7e19c7cdd
   languageName: node
   linkType: hard
 
@@ -365,10 +374,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/helper-string-parser@npm:^7.23.4":
+  version: 7.23.4
+  resolution: "@babel/helper-string-parser@npm:7.23.4"
+  checksum: 10/c352082474a2ee1d2b812bd116a56b2e8b38065df9678a32a535f151ec6f58e54633cc778778374f10544b930703cca6ddf998803888a636afa27e2658068a9c
+  languageName: node
+  linkType: hard
+
 "@babel/helper-validator-identifier@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/helper-validator-identifier@npm:7.16.7"
   checksum: 10/42b9b56c3543ded08992e8c118cb017dbde258895bd6a2e69186cb98f4f5811cd94ceedf4b5ace4877e7be07a7280aa9b9de65d1cb416064a1e0e1fd5a89fcca
+  languageName: node
+  linkType: hard
+
+"@babel/helper-validator-identifier@npm:^7.22.20":
+  version: 7.22.20
+  resolution: "@babel/helper-validator-identifier@npm:7.22.20"
+  checksum: 10/df882d2675101df2d507b95b195ca2f86a3ef28cb711c84f37e79ca23178e13b9f0d8b522774211f51e40168bf5142be4c1c9776a150cddb61a0d5bf3e95750b
   languageName: node
   linkType: hard
 
@@ -1671,6 +1694,17 @@ __metadata:
     "@babel/helper-validator-identifier": "npm:^7.16.7"
     to-fast-properties: "npm:^2.0.0"
   checksum: 10/535ccef360d0c74e2bb685050f3a45e6ab30f66c740bbdd0858148ed502043f1ae2006a9d0269ac3b7356b690091ae313efd912e408bc0198d80a14b2a6f1537
+  languageName: node
+  linkType: hard
+
+"@babel/types@npm:^7.22.10, @babel/types@npm:^7.22.5":
+  version: 7.24.0
+  resolution: "@babel/types@npm:7.24.0"
+  dependencies:
+    "@babel/helper-string-parser": "npm:^7.23.4"
+    "@babel/helper-validator-identifier": "npm:^7.22.20"
+    to-fast-properties: "npm:^2.0.0"
+  checksum: 10/a0b4875ce2e132f9daff0d5b27c7f4c4fcc97f2b084bdc5834e92c9d32592778489029e65d99d00c406da612d87b72d7a236c0afccaa1435c028d0c94c9b6da4
   languageName: node
   linkType: hard
 
@@ -3450,7 +3484,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blogmap@workspace:."
   dependencies:
-    "@babel/helper-builder-react-jsx": "npm:^7.16.0"
+    "@babel/helper-builder-react-jsx": "npm:^7.22.10"
     "@babel/helper-builder-react-jsx-experimental": "npm:^7.12.11"
     "@babel/helper-define-map": "npm:^7.16.0"
     "@babel/helper-regex": "npm:^7.10.5"
