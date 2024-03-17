@@ -1700,6 +1700,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.5.1"
+  checksum: 10/9f0ece2ada614348271bede64e3392937aca3ffad7bea0c94a982f1fc36297a586908248e32afb2ab6148f9edac863d9f67ed025d7b3636c2edb2ae79a9b90d5
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-common-types@npm:^0.2.36":
   version: 0.2.36
   resolution: "@fortawesome/fontawesome-common-types@npm:0.2.36"
@@ -1707,19 +1714,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@fortawesome/fontawesome-common-types@npm:0.3.0"
-  checksum: 10/c0960d8f86bf7206e9dad547b5c636c4b0af972e47aa4dbac09d381e8e8fc9019fddd4437d71866a11a44af43f485396e4b09b40de40291d33621f8b91f627d7
-  languageName: node
-  linkType: hard
-
-"@fortawesome/fontawesome-svg-core@npm:^1.2.27":
-  version: 1.3.0
-  resolution: "@fortawesome/fontawesome-svg-core@npm:1.3.0"
+"@fortawesome/fontawesome-svg-core@npm:^6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.5.1"
   dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:^0.3.0"
-  checksum: 10/06b3e05fa19700286e99c0da904d837b28aa00de61379a1fffb9b219566dae7b61df71959877c179cd57b4008dc1bf45294a9d87782cc5c1f15a1022cc930931
+    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
+  checksum: 10/65adbce67d430d94d1f4b10b44ceb73cce38e44b6513968fd1f7bc7ecb279a6945e8e6328e7845940516b2694b50dca31cd7563e16ebc8110fca14dc7bdfafff
   languageName: node
   linkType: hard
 
@@ -3454,7 +3454,7 @@ __metadata:
     "@babel/helper-builder-react-jsx-experimental": "npm:^7.12.11"
     "@babel/helper-define-map": "npm:^7.16.0"
     "@babel/helper-regex": "npm:^7.10.5"
-    "@fortawesome/fontawesome-svg-core": "npm:^1.2.27"
+    "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
     "@fortawesome/free-regular-svg-icons": "npm:^5.12.1"
     "@fortawesome/free-solid-svg-icons": "npm:^5.12.1"
     "@fortawesome/react-fontawesome": "npm:^0.1.9"
