@@ -1775,15 +1775,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.1.9":
-  version: 0.1.17
-  resolution: "@fortawesome/react-fontawesome@npm:0.1.17"
+"@fortawesome/react-fontawesome@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@fortawesome/react-fontawesome@npm:0.2.0"
   dependencies:
     prop-types: "npm:^15.8.1"
   peerDependencies:
-    "@fortawesome/fontawesome-svg-core": ~1 || >=1.3.0-beta1
-    react: ">=16.x"
-  checksum: 10/a629283e13f6d12d17b7292b666fa94d95ea34e01bad263a1606bda170cc60dfb95d973b2b8f565d23dfdef773909b26cfad20fb985efec7a7a7bc6a90b0a818
+    "@fortawesome/fontawesome-svg-core": ~1 || ~6
+    react: ">=16.3"
+  checksum: 10/9b574daaf4413ae202dc8e4ff500726ea58d0a5cf6bdca9ad992f57956625f3750596852fd511600ed5b547025fc8af1cf6cf5a25a807b5c0f49af24b3e00efe
   languageName: node
   linkType: hard
 
@@ -3491,7 +3491,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
     "@fortawesome/free-regular-svg-icons": "npm:^5.12.1"
     "@fortawesome/free-solid-svg-icons": "npm:^5.12.1"
-    "@fortawesome/react-fontawesome": "npm:^0.1.9"
+    "@fortawesome/react-fontawesome": "npm:^0.2.0"
     bootstrap: "npm:^4.3.1"
     jquery: "npm:^3.7.1"
     leaflet: "npm:^1.9.4"
