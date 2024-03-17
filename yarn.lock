@@ -1757,12 +1757,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-regular-svg-icons@npm:^5.12.1":
-  version: 5.15.4
-  resolution: "@fortawesome/free-regular-svg-icons@npm:5.15.4"
+"@fortawesome/free-regular-svg-icons@npm:^6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/free-regular-svg-icons@npm:6.5.1"
   dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:^0.2.36"
-  checksum: 10/897ec569c734fa96ff13443b5023c79195f8d0f3f6f78190ee40809d552194ef361704592976b017a53133f1cd1e68f7880b33d262c657a60637ec9ab1867e83
+    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
+  checksum: 10/58a9f4dcf5b08c1fad4f4353cb4c280f3a1919f3c7fe3b9b411d24f82b1e75a1edc12f5521721f8b01c3d080e6f12953353ceb3876d045f214f3a1ff1357a29d
   languageName: node
   linkType: hard
 
@@ -3489,7 +3489,7 @@ __metadata:
     "@babel/helper-define-map": "npm:^7.16.0"
     "@babel/helper-regex": "npm:^7.10.5"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
-    "@fortawesome/free-regular-svg-icons": "npm:^5.12.1"
+    "@fortawesome/free-regular-svg-icons": "npm:^6.5.1"
     "@fortawesome/free-solid-svg-icons": "npm:^5.12.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     bootstrap: "npm:^4.3.1"
