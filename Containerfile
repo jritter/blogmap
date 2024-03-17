@@ -1,6 +1,6 @@
 # Stage 1 - the build process
 FROM quay.io/fedora/nodejs-20 as build-deps
-WORKDIR /usr/src/app/
+WORKDIR /tmp
 RUN npm install -g yarn
 RUN yarn set version stable
 COPY package.json yarn.lock .yarnrc.yml ./
@@ -14,7 +14,7 @@ FROM quay.io/fedora/fedora-minimal
 RUN microdnf -y install nginx \
   && microdnf clean all
 
-COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+COPY --from=build-deps /tmp/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/
 
 USER 1001
