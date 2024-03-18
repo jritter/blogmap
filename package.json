@@ -43,5 +43,10 @@
     "@babel/helper-define-map": "^7.18.6",
     "@babel/helper-regex": "^7.10.5"
   },
+  "resolutions": {
+    "postcss": "npm:^8.4.31",
+    "json5": "npm:^2.2.2",
+    "nth-check": "npm:^2.0.1"
+  },
   "packageManager": "yarn@4.1.1"
 }
