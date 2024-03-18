@@ -291,13 +291,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-define-map@npm:^7.16.0":
-  version: 7.16.7
-  resolution: "@babel/helper-define-map@npm:7.16.7"
+"@babel/helper-define-map@npm:^7.18.6":
+  version: 7.18.6
+  resolution: "@babel/helper-define-map@npm:7.18.6"
   dependencies:
-    "@babel/helper-function-name": "npm:^7.16.7"
-    "@babel/types": "npm:^7.16.7"
-  checksum: 10/87af599f1336af54849736fad2edea18baad80a7cabdccd56d2d5a6a726edf9198d6627b1c1185a1360350f805ea98e3ea8bc53b9fdf57399a84dc38950b7386
+    "@babel/helper-function-name": "npm:^7.18.6"
+    "@babel/types": "npm:^7.18.6"
+  checksum: 10/9d112b03c1d4a07aa26610b5c8a14144003e369ef49be5adf471c298e20eeda93adcb4b386e76b748a0c07b9acdf75fb59010e3cae0929cbd87dd0fa8c6ec65d
   languageName: node
   linkType: hard
 
@@ -358,7 +358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-function-name@npm:^7.22.5, @babel/helper-function-name@npm:^7.23.0":
+"@babel/helper-function-name@npm:^7.18.6, @babel/helper-function-name@npm:^7.22.5, @babel/helper-function-name@npm:^7.23.0":
   version: 7.23.0
   resolution: "@babel/helper-function-name@npm:7.23.0"
   dependencies:
@@ -1991,7 +1991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.12.6, @babel/types@npm:^7.20.7, @babel/types@npm:^7.22.10, @babel/types@npm:^7.22.15, @babel/types@npm:^7.22.19, @babel/types@npm:^7.22.5, @babel/types@npm:^7.23.0, @babel/types@npm:^7.23.4, @babel/types@npm:^7.23.6, @babel/types@npm:^7.24.0, @babel/types@npm:^7.3.3":
+"@babel/types@npm:^7.12.6, @babel/types@npm:^7.18.6, @babel/types@npm:^7.20.7, @babel/types@npm:^7.22.10, @babel/types@npm:^7.22.15, @babel/types@npm:^7.22.19, @babel/types@npm:^7.22.5, @babel/types@npm:^7.23.0, @babel/types@npm:^7.23.4, @babel/types@npm:^7.23.6, @babel/types@npm:^7.24.0, @babel/types@npm:^7.3.3":
   version: 7.24.0
   resolution: "@babel/types@npm:7.24.0"
   dependencies:
@@ -4509,7 +4509,7 @@ __metadata:
   dependencies:
     "@babel/helper-builder-react-jsx": "npm:^7.22.10"
     "@babel/helper-builder-react-jsx-experimental": "npm:^7.12.11"
-    "@babel/helper-define-map": "npm:^7.16.0"
+    "@babel/helper-define-map": "npm:^7.18.6"
     "@babel/helper-regex": "npm:^7.10.5"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.1"
