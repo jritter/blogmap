@@ -20,4 +20,4 @@ COPY nginx.conf /etc/nginx/
 USER 1001
 EXPOSE 8080
 STOPSIGNAL SIGTERM
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-e", "stderr"]
