@@ -3495,7 +3495,7 @@ __metadata:
     bootstrap: "npm:^4.3.1"
     jquery: "npm:^3.7.1"
     leaflet: "npm:^1.9.4"
-    leaflet-active-area: "npm:^1.1.1"
+    leaflet-active-area: "npm:^1.2.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-flags: "npm:^0.1.18"
@@ -8872,10 +8872,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leaflet-active-area@npm:^1.1.1":
-  version: 1.2.0
-  resolution: "leaflet-active-area@npm:1.2.0"
-  checksum: 10/e7ce5253deb73642261a24c609b5bc62de8d2f89e0619cc6895d33bb9b56e76fa3b06108e4200c9393d352f275ef5531e0127118ad2f10ad371235c1e4839955
+"leaflet-active-area@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "leaflet-active-area@npm:1.2.1"
+  checksum: 10/d4cf8fbaf16fc855432c532deb03198287b81a0dbbbd0fd2accc3ce3dfa48bd9de69ca8178825a912fbbeb9ab0eee5515be5b2a8ddc587eac9844569b63f89bb
   languageName: node
   linkType: hard
 
