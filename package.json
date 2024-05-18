@@ -7,7 +7,7 @@
     "@babel/helper-builder-react-jsx-experimental": "^7.12.11",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
@@ -48,5 +48,5 @@
     "json5": "npm:^2.2.2",
     "nth-check": "npm:^2.0.1"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.2.2"
 }

@@ -1938,7 +1938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-solid-svg-icons@npm:^6.5.1":
+"@fortawesome/free-solid-svg-icons@npm:^6.5.2":
   version: 6.5.2
   resolution: "@fortawesome/free-solid-svg-icons@npm:6.5.2"
   dependencies:
@@ -4109,7 +4109,7 @@ __metadata:
     "@babel/helper-regex": "npm:^7.10.5"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.2"
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.2"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
+    "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.1"
     bootstrap: "npm:^5.3.3"
     jquery: "npm:^3.7.1"
