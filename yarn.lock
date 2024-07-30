@@ -1947,13 +1947,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:6.5.2":
-  version: 6.5.2
-  resolution: "@fortawesome/fontawesome-common-types@npm:6.5.2"
-  checksum: 10/a918b2dd6566db6878999e1c4523fa8d0fcc3c79f00086b48a36c365e543ac16a2950618f47893a8369d4ee13e454baf1f5108f7238bdf6ec2bea459b6c517ca
-  languageName: node
-  linkType: hard
-
 "@fortawesome/fontawesome-common-types@npm:6.6.0":
   version: 6.6.0
   resolution: "@fortawesome/fontawesome-common-types@npm:6.6.0"

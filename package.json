@@ -48,5 +48,5 @@
     "json5": "npm:^2.2.2",
     "nth-check": "npm:^2.0.1"
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.3.1"
 }
