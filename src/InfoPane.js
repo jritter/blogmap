@@ -1,5 +1,5 @@
 import React from 'react';
-import Flag from 'react-flags';
+import ReactCountryFlag from 'react-country-flag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -11,11 +11,15 @@ function InfoPane(props) {
   var flag = '';
   if (props.post.country_code !== '') {
     flag = (
-      <Flag
-        name={props.post.country_code}
-        format="png"
-        pngSize="32"
-        basePath=""
+
+      <ReactCountryFlag
+          countryCode={props.post.country_code}
+          svg
+          style={{
+              width: '2em',
+              height: '2em',
+          }}
+          title={props.post.country_code}
       />
     );
   }

@@ -1,6 +1,6 @@
 # Blogmap
 
-## How to Build Docker image
+## How to Build Container image
 
 ```bash
 buildah bud -t blogmap:latest .
@@ -9,7 +9,7 @@ buildah bud -t blogmap:latest .
 ## How to run it with podman
 
 ```bash
-podman run -p 8080:80 --rm -d -i -t blogmap:latest
+podman run -p 8080:8080 --rm -d -i -t blogmap:latest
 ```
 
-[![Docker Repository on Quay](https://quay.io/repository/jritter/blogmap/status "Docker Repository on Quay")](https://quay.io/repository/jritter/blogmap)
+[![Container Repository on Quay](https://quay.io/repository/jritter/blogmap/status "Container Repository on Quay")](https://quay.io/repository/jritter/blogmap)

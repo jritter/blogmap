@@ -1,20 +1,22 @@
 # Stage 1 - the build process
-FROM quay.io/fedora/nodejs-20 as build-deps
-WORKDIR /tmp
-RUN npm install -g yarn
-RUN yarn set version stable
+FROM quay.io/hummingbird/nodejs:24-builder as build-deps
+USER root
+# Copy only package definition files first
 COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases .yarn/releases
+
+RUN npm install -g yarn
+
+# Install without --immutable so lockfile can be refreshed (resolutions override react-scripts 0.0.0 → 5.0.1)
 RUN yarn install
 COPY . ./
 RUN yarn build
 
 # Stage 2 - build NGINX image
-FROM quay.io/fedora/fedora-minimal
+FROM quay.io/hummingbird/nginx:1.28
 
-RUN microdnf -y install nginx \
-  && microdnf clean all
-
-COPY --from=build-deps /tmp/build /usr/share/nginx/html
+# react-scripts outputs to ./build
+COPY --from=build-deps ./app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/
 
 USER 1001
